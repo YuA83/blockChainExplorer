@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Timocoin API</title>
+    <script src="/javascripts/jquery-3.5.1.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="intro">
+            Timocoin Explorer
+        </div>
+        <ul>
+            <% if(userId != undefined) { %>
+            <li><a href="/signin/logout">logout</a></li>
+            <% } else { %>
+            <li><a href="/signup">signup</a></li>
+            <li><a href="/signin">signin</a></li>
+            <% } %>
+            <li><a href="/sendfrom">sendfrom</a></li>
+        </ul>
+        <p>
+            <b>blockcount(height)</b>
+            <span  class="height"></span>
+        </p>
+        <table id="transactionsTable">
+            <thead>
+                <tr>
+                    <th>txid</th>
+                    <th>time</th>
+                    <th>from</th>
+                    <th>account</th>
+                    <th>to</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>            
+        </table>
+    </div>
+</body>
+<script src="/javascripts/index.js"></script>
+</html>
