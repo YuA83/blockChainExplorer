@@ -8,7 +8,7 @@ const request = require('request');
 
 const USER = process.env.RPC_USER;
 const PASS = process.env.RPC_PASSWORD;
-const PORT = 9636; // RPCport
+const PORT = 9636;
 const ID_STRING = "TimoCoin";
 const headers = {
   "content-type": "text/plain;"
@@ -23,6 +23,8 @@ router.get('/', function(req,res) {
     else {
         res.render('signup',{
             title: ejs.render('title'),
+            userId: req.session.userId,
+            logined : req.session.logined,
         });
     }
 });
